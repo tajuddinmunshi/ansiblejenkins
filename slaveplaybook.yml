@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  
+  tasks:
+
+  - name: Install java
+    yum:
+      name: java-11-openjdk-devel
+      state: present
+
+  - name: Install git, nmap and net-tools 
+    yum:
+      state: present
+      name:
+        - git
+        - net-tools
+        - telnet
+        - wget
+        - sshpass
